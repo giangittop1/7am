@@ -160,7 +160,7 @@
                 return re.test(email)
             }
             function validatePassword(password) {
-                const re ="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+                const re =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
                 return re.test(password)
             }
             const email = document.querySelector('#email')

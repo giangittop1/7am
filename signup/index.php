@@ -159,6 +159,10 @@
                 const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
                 return re.test(email)
             }
+            function validatePassword(password) {
+                const re ="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+                return re.test(password)
+            }
             const email = document.querySelector('#email')
             const confirm_email = document.querySelector('#confirm-email')
             const password = document.querySelector('#password')
@@ -199,7 +203,12 @@
                 if (this.value === "") {
                     document.querySelector("#lost-password").innerHTML = "x You need to enter your password."
                     this.style.borderColor = "red"
-                } else {
+                }
+                else if(validatePassword(this.value)===false) {
+                    document.querySelector("#lost-password").innerHTML="x Your password must have minumum 8 characters at least, one uppercase letter, one lowercase letter and one number.";
+                    this.style.borderColor= "red"
+                }
+                else {
                     document.querySelector("#lost-password").innerHTML = ""
                     this.style.borderColor = "initial"
                 }

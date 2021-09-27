@@ -1,0 +1,282 @@
+@mixin menu
+        display: flex
+        gap: 10px
+        flex-direction: column
+        li
+            display: flex
+            align-items: flex-end
+*
+    margin: 0px
+    padding: 0px
+    font-family: 'Open Sans', sans-serif
+    box-sizing: border-box
+    user-select: none !important
+img
+    pointer-events: none !important
+body,html
+    width: 100%
+    height: 100%
+body
+    .container
+        display: flex
+        flex-direction: row
+        justify-content: center
+        width: 100%
+        height: 100%
+        
+        @mixin he
+            width: 250px
+            height: 100%
+            display: flex
+            flex-direction: column
+            color: rgba(255, 255, 255, 0.75)
+        .play-song
+            width: 100%
+            height: 100px
+            position: fixed
+            bottom: 0
+            background-color: #2a2a2a
+            z-index: 3
+            border-top: 1px solid rgba(255, 255, 255, 0.15)
+            display: flex
+            flex-direction: row
+               
+            .play-song1
+                width: 20%
+            .play-song2
+                width: 60%
+                position: relative
+                display: flex
+                justify-content: center
+                flex-direction: column
+                align-items: center
+                .parent-toggle
+                    .dura
+                        display: flex
+                        flex-direction: row
+                        justify-content: center
+                        align-items: center
+                        gap: 20px
+                        cursor: pointer
+                        div
+                            i
+                                &:hover
+                                    color: #fff !important
+                .main-progress
+                    width: 100%
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    gap: 10px
+                    .parent-toggle
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        .togglePlay
+                            margin: 0 !important
+                    .parent-progress 
+                        width: 60%
+                        height: 3px
+                        background-color: rgba(255, 255, 255, 0.3)
+                        cursor: pointer
+                        &:hover
+                            .progress
+                                background-color: #1db954 !important
+                        .progress
+                            top: 50%
+                            height: 100%
+                        &:hover
+                            height: 5px !important
+
+            .play-song3
+                width: 20%
+                display: flex
+                justify-content: center
+                align-items: center
+                flex-direction: row
+                .slidecontainer
+                    width: 100%
+                    height: 20px
+                    display: flex
+                    align-items: center
+                    div
+                        cursor: pointer !important
+                    .display-volume
+                        width: 21px !important
+                        height: 21px !important
+                        .fa-volume-mute
+                            width: 18px !important
+                    gap: 20px
+                    .range
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        input
+                            width: 100px    
+                            height: 5px 
+                            cursor: pointer
+                            color: #1db954 !important
+                        input
+                            &:focus
+                                background-color: #1db954 !important
+
+                                           
+            .progress
+                width: 1px
+                height: 3px
+                background-color: #FFFFFF
+                transition: width .1s linear
+            .togglePlay
+                font: 0/0 a
+                background-color: #ffffff   
+                color: transparent
+                display: flex
+                justify-content: center
+                align-items: center
+                margin: 10px auto 0
+                width: 40px
+                height: 40px
+                border: 1px solid darken(#006b5a, 10%)
+                border-radius: 50%
+                cursor: pointer
+                transition: transform 150ms ease-out
+                &::after
+                    box-sizing: border-box
+                    display: block
+                    content: ''
+                    width: 0
+                    height: 0
+                    margin-left: 8px
+                    border-color: transparent
+                    border-style: solid
+                    border-top-width: 8px
+                    border-bottom-width: 8px
+                    border-left-width: 9px
+                    border-left-color: #000000e6
+                &:hover 
+                    transform: scale(1.05)
+                &.active
+                    &::after
+                        width: 10.5px
+                        height: 13px
+                        margin-left: 0
+                        border-width: 0 3.5px
+                        border-color: #000000e6
+        .header-fixed
+            width: 100%
+            height: 60px
+            position: fixed
+            background-color: #46433d
+            top: 0
+            z-index: 1
+            div
+                display: flex
+                gap: 15px
+                position: absolute
+                li
+                    list-style-type: none
+            .pagination
+                cursor: pointer
+                left: 260px
+                top: 25%
+                li
+                    background-color: #292a2d
+                    border-radius: 50%
+                    width: 26px
+                    height: 26px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    i
+                        color: rgba(255, 255, 255, 0.65)
+            .infomation
+                right: 260px
+                top: 20%
+                button
+                    padding: 7px 25px
+                    border: none
+                    outline: none
+                    background-color: #292a2d
+                    border-radius: 80px
+                    border: 1px solid rgb(255, 255, 255)
+                    color: rgb(255,255,255) 
+                    text-transform: uppercase
+                    font-weight: 600
+                    &:nth-of-type(1)
+                        &:hover
+                            transform: scale(1.05)
+                    &:nth-of-type(2)
+                        &:hover
+                            background-color: #75292a2d
+                    cursor: pointer
+                        
+
+                        
+        .content1
+            background-color: #000000
+            padding-left: 10px
+            padding-top: 10px
+            padding-right: 10px
+            z-index: 2
+            @include he
+            ul
+                li
+                    cursor: pointer
+                    gap: 5px
+                    font-weight: 550
+                li
+                    &:hover
+                        color: rgba(255, 255, 255, 1)
+            .menu1
+                @include menu
+                li
+                    img
+                        user-select: none !important
+                
+            .menu2
+                @include menu
+            .menu3
+                @include menu
+                padding-bottom: 10px
+                border-bottom: 1px solid rgba(255, 255, 255, 0.35)
+
+        .content2
+            width: calc(100% - 500px)
+            height: 100%
+            background-color: #121212
+            display: flex
+            z-index: 0
+        .content3
+            @include he
+            background-color: #282828            
+            padding-left: 10px
+            padding-right: 10px
+            padding-top: 20px
+            z-index: 2
+            ul
+                display: flex
+                flex-direction: column
+                gap: 20px
+                li
+                    list-style-type: none
+                    gap: 10px
+                    font-weight: 550
+                    font-size: 13px
+            .sub-content3
+                .friend-activity 
+                    font-size: 16px
+                    color: #fff
+                li
+                    button
+                        cursor: pointer
+                        &:hover
+                            transform: scale(1.05)
+
+.active-repeat 
+    color: #4692f5 !important
+.drag-bar   
+    cursor: pointer
+    width: 20px
+    background: #eee
+    display: flex
+

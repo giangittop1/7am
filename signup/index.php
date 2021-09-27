@@ -43,7 +43,7 @@
                     <div class="all-content-2-1-1">
                         <label for="email">What's your email ?</label>
                         <input type="text" id="email" name="email" placeholder="Enter your email." autocomplete="off">
-                        <span style="color:#ff0000" id="lost-email"></span>
+                        <span style="color:#0400FF" id="lost-email"></span>
                     </div>
                     <div class="all-content-2-1-2">
                         <label for="confirm-email">Confirm your email</label>

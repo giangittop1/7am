@@ -201,6 +201,8 @@
             })
             password.addEventListener("focusout", function() {
                 if (this.value === "") {
+                    console.log(111);
+
                     document.querySelector("#lost-password").innerHTML = "x You need to enter your password."
                     this.style.borderColor = "red"
                 }

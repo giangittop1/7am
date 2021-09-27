@@ -205,6 +205,7 @@
                     this.style.borderColor = "red"
                 }
                 else if(validatePassword(this.value)===false) {
+                    console.log(111);
                     document.querySelector("#lost-password").innerHTML="x Your password must have minumum 8 characters at least, one uppercase letter, one lowercase letter and one number.";
                     this.style.borderColor= "red"
                 }
